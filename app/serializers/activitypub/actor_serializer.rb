@@ -35,7 +35,8 @@ class ActivityPub::ActorSerializer < ActivityPub::Serializer
 
   has_one :endpoints, serializer: EndpointsSerializer
 
-  has_one :icon,  serializer: ActivityPub::ImageSerializer, if: :avatar_exists?
+  # 아름님 감사합니다
+  has_one :icon,  serializer: ActivityPub::ImageSerializer
   has_one :image, serializer: ActivityPub::ImageSerializer, if: :header_exists?
 
   delegate :moved?, to: :object

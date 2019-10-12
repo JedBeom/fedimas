@@ -215,7 +215,7 @@ class FocalPointModal extends ImmutablePureComponent {
         }
       }
 
-      worker.recognize(media_url)
+      worker.recognize(media_url, 'eng+kor')
         .progress(({ progress }) => this.setState({ progress }))
         .finally(() => worker.terminate())
         .then(({ text }) => this.setState({ description: removeExtraLineBreaks(text), dirty: true, detecting: false }))
